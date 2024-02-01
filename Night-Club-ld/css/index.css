@@ -13,11 +13,11 @@ body {
 
 
 .head_container {
-    padding: 34px 0 0 150px;
+    padding: 34px 0 0 0;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    width: 1600px;
+    width: 1200px;
     height: 50.958px;
 }
 
@@ -33,6 +33,7 @@ body {
     display: flex;
     align-items: center;
     gap: 25px;
+    margin-right: 25px;
 }
 
 .nav_a {
@@ -74,7 +75,7 @@ body {
 .night_clubbing {}
 
 .container {
-    width: 1600px;
+    width: 1200px;
 
     margin: 0 auto;
 
@@ -305,7 +306,7 @@ body {
     line-height: normal;
     text-transform: uppercase;
     padding-top: 50px;
-    margin-left: 220px;
+
 }
 
 
@@ -341,11 +342,11 @@ body {
 }
 
 .prev_btn {
-    left: 500px;
+    left: 250px;
 }
 
 .next_btn {
-    right: 500px;
+    right: 250px;
 }
 
 /* WHAT WE HAVE */
@@ -413,7 +414,7 @@ body {
 }
 
 .title_contact {
-    margin-left: 220px;
+
     color: #FFF;
     font-family: "Suisse Intl";
     font-size: 48px;
@@ -435,9 +436,7 @@ body {
     background: #222220;
 }
 
-.contact_content_left {
-    margin-left: 220px;
-}
+.contact_content_left {}
 
 .online_cont {
     width: 353px;
@@ -586,12 +585,14 @@ body {
 
 /* NEWS MENU PAGE */
 .header_PAGE_MENU {
+
     position: static;
 }
 
 /* TABS */
-.tab {padding-top: 50px;
-    margin-left: 220px;
+.tab {
+    padding-top: 50px;
+
 }
 
 .tab>input[type="radio"] {
@@ -618,10 +619,12 @@ body {
     text-transform: uppercase;
     margin-bottom: 25px;
 }
-.tab_title_1{
+
+.tab_title_1 {
     margin-right: 50px;
 }
-.tab_title_2{
+
+.tab_title_2 {
     margin-left: 50px;
 }
 
@@ -648,11 +651,13 @@ body {
     line-height: normal;
     text-transform: uppercase;
 }
-.filter{
-    margin-left: -220px;
+
+.filter {
+
     margin-top: 25px;
-    margin-bottom:25px ;
+    margin-bottom: 25px;
 }
+
 .filter_top,
 .filter_bot {
     display: flex;
@@ -667,4 +672,189 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+/* CARD MENU FOOD */
+.card_content_food {
+    width: 380px;
+    height: 655px;
+    margin-bottom: 50px;
+}
+
+.tab_content_menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px 15px;
+}
+
+.container_card_menu {
+    padding-left: 25px;
+}
+
+.text_card_menu {
+
+    background-image: url("/Night-Club-ld/img/food_bg.png");
+}
+
+.text_card_menu_title {
+    color: #fff;
+    size: 22px;
+    margin: 0 auto;
+}
+
+.kk_BGY {
+    display: flex;
+    gap: 30px;
+}
+
+.kk_BGY_p {
+    color: #CB3B48;
+    size: 16px;
+    font-weight: 400;
+}
+
+.buy_food_menu {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.price_div {
+    display: flex;
+
+}
+
+.price {
+    size: 36px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.price_span {
+    color: #fff;
+    size: 16px;
+    font-weight: 400;
+    padding-top: 40px;
+}
+
+.more_basket {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button_more {
+    /* padding: ; */
+    width: 114px;
+    height: 40px;
+    background: #fff;
+    color: #CB3B48;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.button_basket {
+    padding: 9px 9px 7px 7px;
+    background: #BD2D43;
+    border: 1px solid #C93A48;
+    border-radius: 5px;
+}
+
+.hr_card {
+    background: #CB3B48;
+    width: 210px;
+    height: 9px;
+    border-radius: 25px 25px 0px 0px;
+    border: 1px solid #BD2D43;
+}
+
+/* CARD MENU DRING */
+.card_content_dring {
+    width: 380px;
+    height: 637px;
+    margin-bottom: 50px;
+
+}
+
+.dring_categry {
+    color: #CB3B48;
+    size: 16px;
+    font-weight: 400;
+}
+
+.button_dring_more {
+    width: 114px;
+    height: 40px;
+    background: #CB3B48;
+    color: #fff;
+    border: 1px solid #CB3B48;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+/* BASKET */
+
+.basket {
+    margin-top: 100px;
+}
+
+#tab_btn_1:checked~#content_1,
+#tab_btn_2:checked~#content_2 {
+    display: block;
+}
+
+#tab_btn_1:checked~.tab_title_1,
+#tab_btn_2:checked~.tab_title_2 {
+    color: #FFF;
+    font-family: Gilroy;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.basket>inpuyt[tpe="radio"]:checked+label {
+    color: #FFF;
+    font-family: Gilroy;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+/* Content BASKET */
+.about_basket {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: end;
+}
+
+.about_basket_title {
+    color: #fff;
+    font-size: 24px;
+    border-bottom: 2px  #BD2D43 solid;
+ 
+
+}
+
+.btn_about_basket {
+    align-content: center;
+    border: 1px solid #CB3B48;
+    border-radius: 5px;
+    padding: 5px 40px;
+    box-shadow: 0px 0px 14.966828346252441px 0px #CB3B48;
+    background-color: #CB3B48;
+    color: #fff;
+ 
+    height: 50px;
+}
+.btn_about_basket>img{
+margin-right: 10px;
+}
+.about_basket_title>span{
+    color: #BD2D43;
 }
