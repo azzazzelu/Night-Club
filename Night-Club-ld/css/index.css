@@ -698,8 +698,9 @@ body {
 
 .text_card_menu_title {
     color: #fff;
-    size: 22px;
+    font-size: 24px;
     margin: 0 auto;
+   text-transform: uppercase;
 }
 
 .kk_BGY {
@@ -721,20 +722,21 @@ body {
 
 .price_div {
     display: flex;
-
+ 
 }
 
 .price {
     size: 36px;
     font-weight: 700;
     color: #fff;
+    margin: 0 ;
 }
 
 .price_span {
     color: #fff;
     size: 16px;
     font-weight: 400;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
 .more_basket {
@@ -832,7 +834,10 @@ body {
     align-items: center;
     justify-content: end;
 }
-
+.about_basket_content{
+    display: flex;
+    justify-content: space-between;
+}
 .about_basket_title {
     color: #fff;
     font-size: 24px;
@@ -857,4 +862,49 @@ margin-right: 10px;
 }
 .about_basket_title>span{
     color: #BD2D43;
+}
+.mid_order_card{
+    padding-top: 20px;
+}
+.order_card{
+    width: 767px;
+    margin-top: 25px;
+    height: 151px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background: #161615;
+    background-image: url("/Night-Club-ld/vector/order_bg.svg");
+}
+.order_select{
+    width: 767px; 
+    margin-top: 50px;
+}
+.right_order_card{
+    padding: 10px 10px 0 0;
+    display: flex;
+}
+.btn_close_order{
+    background: #CB3B48;
+    width: 29px;
+    height: 29px;
+    border: 1px solid #CB3B48;
+    border-radius:50% ;
+}
+.btn_order_more{
+    display: flex;
+    align-items: flex-end;
+}
+ .btn_more_order{
+    margin-bottom: 10px;
+ 
+ }
+/* YOU ORDER */
+.your_order{
+    width: 377px;
+    height: 507px;
+    margin-top: 50px;
+    border-radius: 30px;
+    background: #161615;
+    background-image: url("/Night-Club-ld/vector/order_bg.svg");
 }
