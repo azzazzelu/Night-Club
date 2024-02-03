@@ -700,7 +700,7 @@ body {
     color: #fff;
     font-size: 24px;
     margin: 0 auto;
-   text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .kk_BGY {
@@ -722,14 +722,14 @@ body {
 
 .price_div {
     display: flex;
- 
+
 }
 
 .price {
     size: 36px;
     font-weight: 700;
     color: #fff;
-    margin: 0 ;
+    margin: 0;
 }
 
 .price_span {
@@ -834,15 +834,18 @@ body {
     align-items: center;
     justify-content: end;
 }
-.about_basket_content{
+
+.about_basket_content {
     display: flex;
     justify-content: space-between;
+
 }
+
 .about_basket_title {
     color: #fff;
     font-size: 24px;
-    border-bottom: 2px  #BD2D43 solid;
- 
+    border-bottom: 2px #BD2D43 solid;
+
 
 }
 
@@ -854,19 +857,23 @@ body {
     box-shadow: 0px 0px 14.966828346252441px 0px #CB3B48;
     background-color: #CB3B48;
     color: #fff;
- 
+
     height: 50px;
 }
-.btn_about_basket>img{
-margin-right: 10px;
+
+.btn_about_basket>img {
+    margin-right: 10px;
 }
-.about_basket_title>span{
+
+.about_basket_title>span {
     color: #BD2D43;
 }
-.mid_order_card{
+
+.mid_order_card {
     padding-top: 20px;
 }
-.order_card{
+
+.order_card {
     width: 767px;
     margin-top: 25px;
     height: 151px;
@@ -874,37 +881,323 @@ margin-right: 10px;
     justify-content: space-between;
     gap: 20px;
     background: #161615;
+    border-radius: 30px;
     background-image: url("/Night-Club-ld/vector/order_bg.svg");
 }
-.order_select{
-    width: 767px; 
+
+.order_select {
+    width: 767px;
     margin-top: 50px;
 }
-.right_order_card{
+
+.right_order_card {
     padding: 10px 10px 0 0;
     display: flex;
 }
-.btn_close_order{
+
+.btn_close_order {
     background: #CB3B48;
     width: 29px;
     height: 29px;
     border: 1px solid #CB3B48;
-    border-radius:50% ;
+    border-radius: 50%;
 }
-.btn_order_more{
+
+.btn_order_more {
     display: flex;
     align-items: flex-end;
 }
- .btn_more_order{
+
+.btn_more_order {
     margin-bottom: 10px;
- 
- }
+
+}
+
 /* YOU ORDER */
-.your_order{
+.your_order {
     width: 377px;
-    height: 507px;
+
+    padding-bottom: 25px;
     margin-top: 50px;
     border-radius: 30px;
     background: #161615;
     background-image: url("/Night-Club-ld/vector/order_bg.svg");
+}
+
+.your_order_title {
+    color: #fff;
+    margin: 0 auto;
+    padding: 15px 0 0 15px;
+}
+
+.your_order_buy {
+    margin: 0 auto;
+}
+
+.order_chek {
+    width: 337px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.order_chek_left {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.order_chek_mid {
+    color: #767676;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.order_chek_right {
+    color: #CB3B48;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.delivery_order {
+    width: 337px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    border-bottom: 1px solid #FFFFFF42;
+    border-top: 1px solid #FFFFFF42;
+}
+
+.delivery_order_text {
+    color: #fff;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.delivery_order_price {
+    color: #CB3B48;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.arrange_order {
+    width: 337px;
+    margin: 0 auto;
+
+}
+
+.result_order {
+    display: flex;
+    justify-content: space-between;
+}
+
+.result_order_text {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.result_order_price {
+    color: #CB3B48;
+    font-size: 20px;
+}
+
+.button_arrange_order {
+    width: 337px;
+    height: 50px;
+    border: 1px solid #CB3B48;
+    box-shadow: 0px 0px 14.966828346252441px 0px #CB3B48;
+    border-radius: 5px;
+    background: #CB3B48;
+    color: #fff;
+}
+
+.footer_basket {
+    margin-top: 200px;
+}
+
+/* modal windows */
+
+
+
+.modal {
+    position: fixed;
+    /* фиксированное положение */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* цвет фона */
+    z-index: 1050;
+    opacity: 0;
+    /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    /* анимация перехода */
+    pointer-events: none;
+    /* элемент невидим для событий мыши */
+
+}
+
+/* при отображении модального окно */
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+    overflow-y: auto;
+}
+
+/* ширина модального окна и его отступы от экрана */
+.modal-dialog {
+    position: relative;
+
+    margin: 150px auto;
+    height: 743px;
+    width: 684px;
+
+}
+
+
+/* свойства для блока, содержащего контент модального окна */
+.modal-content {
+
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 743px;
+    width: 684px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background-color: #222220;
+    background-image: url("/Night-Club-ld/img/footerleft.png") no-repeat;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    outline: 0;
+}
+
+/* @media (min-width: 768px) {
+    .modal-content {
+      -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+  } */
+
+/* свойства для заголовка модального окна */
+
+/* свойства для кнопки "Закрыть" */
+.close {
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 15px;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    text-decoration: none;
+}
+
+/* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+.close:focus,
+.close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .75;
+}
+
+/* свойства для блока, содержащего основное содержимое окна */
+.modal-body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 15px;
+    overflow: auto;
+    background-image: url("/Night-Club-ld/img/footerleft.png");
+}
+
+.modal_title {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 50px;
+    color: #fff;
+}
+
+/* form  */
+.modal_form{
+    margin-top: 50px;
+   text-align: center;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 500px;
+    padding: 12px;
+    border: 1px solid #BD2D43;
+    background-color: #222220;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus{
+    border: 1px solid #BD2D43;
+  
+}
+input[type='radio']{
+    accent-color: #BD2D43;
+}
+input[type="submit"] {
+    background-color: #CB3B48;
+    margin-top: 40px;
+    color: #fff;
+    width: 275px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* input[type="submit"]:hover {
+    background-color: #45a049;
+} */
+
+.buy_modal {
+    width: 505px;
+    margin: 0 auto;
+    text-align: start;
+}
+
+.payment {
+    font-size: 21px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 50px;
+}
+
+label {
+    color: #fff;
+}
+.form_p{
+    margin: 20px auto;
+    width: 381px;
+    height: 32px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #636363;
+
 }
