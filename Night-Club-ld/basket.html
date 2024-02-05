@@ -25,7 +25,7 @@
                     </nav>
                 </div>
                 <div class="contact">
-                  
+
                     <a href=""><img class="svg top_svg" src="./vector/phone.svg" alt=""></a>
                     <a href=""><img class="top_svg" src="./vector/acc.svg" alt=""></a>
 
@@ -41,9 +41,9 @@
             <div class="container">
                 <hr class="about_hr">
                 <input checked id="tab_btn_1" class="tab_input" name="tab_btn" type="radio" value="">
-                <label for="tab_btn_1" class="tab_title_1 tab_title">Корзина </label>
+                <label for="tab_btn_1" class="tab_title_1 tab_title">Заказ Онлайн </label>
                 <input id="tab_btn_2" class="tab_input" name="tab_btn" type="radio" value="">
-                <label for="tab_btn_2" class="tab_title_2 tab_title">Корзина Онлайн</label>
+                <label for="tab_btn_2" class="tab_title_2 tab_title">Заказ в ресторане </label>
                 <div class="tab-content" id="content_1">
                     <div class="about_basket">
                         <h1 class="about_basket_title">В корзине <span>3</span> товара </h1>
@@ -61,9 +61,17 @@
                                             <p class="kk_BGY_p">Ккал: 245</p>
                                             <p class="kk_BGY_p">БЖУ: 19,8/12,5/0</p>
                                         </div>
-                                        <div class="price_div">
-                                            <h1 class="price">359₽</h1> <span class="price_span">/100г.</span>
+                                        <div class="price_count">
+                                            <div class="price_div">
+                                                <h1 class="price">359₽</h1> <span class="price_span">/100г.</span>
+                                            </div>
+
+                                            <!-- Сделать счетчик количества товара  -->
+                                            <div class="coutn_food">
+
+                                            </div>
                                         </div>
+
                                     </div>
                                     <div class="right_order_card">
 
@@ -76,6 +84,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
 
                             </div>
                         </div>
@@ -116,7 +125,8 @@
                                 <div class="modal-content">
 
                                     <div class="modal-body">
-                                        <a href="#close" title="Close" class="close"><img src="./vector/close_buy.svg" alt=""></a>
+                                        <a href="#close" title="Close" class="close"><img src="./vector/close_buy.svg"
+                                                alt=""></a>
                                         <div class="modal_title">Заполните данные для доставки</div>
                                         <form class="modal_form" action="" method="post">
 
@@ -153,18 +163,79 @@
 
                                             </div>
                                             <input type="submit" value="Оформить заказ">
-                                            <p class="form_p">Нажимая на кнопку "Оставить заявку", вы даете согласие на обработку персональных данных</p>
+                                            <p class="form_p">Нажимая на кнопку "Оставить заявку", вы даете согласие на
+                                                обработку персональных данных</p>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
+                    <div class="buy_plus">
+                        <div class="buy_plus_title">
+                            <h1 class="buy_plus_title">Добавить к заказу</h1>
+                        </div>
+                        <div class="sauces_plus">
+                            <div class="sauces">
+                                <div class="sauces_left"><img src="./img/tomate.png" alt=""></div>
+                                <div class="sauces_mid">
+                                    <h1 class="sauces_mid_title">Острый томатный соус</h1>
+                                    <h1 class="sauces_mid_text">+30₽<span class="sauces_mid_span">/100г.</span></h1>
+                                </div>
+                                <div class="sauces_right">
+                                    <button class="sauces_right_plus"><img src="./vector/plus_basket.svg"
+                                            alt=""></button>
+                                </div>
+                            </div>
+                            <div class="sauces">
+                                <div class="sauces_left"><img src="./img/tomate.png" alt=""></div>
+                                <div class="sauces_mid">
+                                    <h1 class="sauces_mid_title">Острый томатный соус</h1>
+                                    <h1 class="sauces_mid_text">+30₽<span class="sauces_mid_span">/100г.</span></h1>
+                                </div>
+                                <div class="sauces_right">
+                                    <button class="sauces_right_plus"><img src="./vector/plus_basket.svg"
+                                            alt=""></button>
+                                </div>
+                            </div>
+                            <div class="sauces">
+                                <div class="sauces_left"><img src="./img/tomate.png" alt=""></div>
+                                <div class="sauces_mid">
+                                    <h1 class="sauces_mid_title">Острый томатный соус</h1>
+                                    <h1 class="sauces_mid_text">+30₽<span class="sauces_mid_span">/100г.</span></h1>
+                                </div>
+                                <div class="sauces_right">
+                                    <button class="sauces_right_plus"><img src="./vector/plus_basket.svg"
+                                            alt=""></button>
+                                </div>
+                            </div>
+                            <div class="sauces">
+                                <div class="sauces_left"><img src="./img/tomate.png" alt=""></div>
+                                <div class="sauces_mid">
+                                    <h1 class="sauces_mid_title">Острый томатный соус</h1>
+                                    <h1 class="sauces_mid_text">+30₽<span class="sauces_mid_span">/100г.</span></h1>
+                                </div>
+                                <div class="sauces_right">
+                                    <button class="sauces_right_plus"><img src="./vector/plus_basket.svg"
+                                            alt=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="tab-content" id="content_2">
-                    sdfgsdfsdfgfd
+                    <div class="order_restaurant">
+                        <div class="order_restaurant_title">
+                            <div class="time_number_order">
+                                <h1 class="time_number_order_h">Заказ №234234</h1>
+                                <h1 class="time_number_order_text">18:30</h1>
+                            </div>
+                            <div class="order_status">
+                                <h1 class="order_status_txt">статус: готовится</h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -179,7 +250,7 @@
 
 
 
-    <footer class="footer footer_basket">
+    <footer class="footer  ">
         <div class="container container_footer">
             <div class="content_footer">
                 <div class="content_footer_left">
