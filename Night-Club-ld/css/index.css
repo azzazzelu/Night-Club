@@ -1,8 +1,14 @@
+@font-face{
+    font-family: 'SuisseIntl';
+    src: url("../font/suisseintl.css");
+}
+
 body {
     background: #222220;
-    font-family: SuisseIntl;
+    font-family: 'SuisseIntl';
     font-size: 18px;
 }
+
 
 .header {
     width: 1600px;
@@ -838,6 +844,7 @@ body {
 .about_basket_content {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
 
 }
 
@@ -888,6 +895,7 @@ body {
 .order_select {
     width: 767px;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .right_order_card {
@@ -1205,21 +1213,25 @@ label {
     font-weight: 400;
     color: #636363;
 }
-.buy_plus{
+
+.buy_plus {
     margin-bottom: 100px;
 }
+
 .buy_plus_title {
     color: #fff;
     font-size: 40px;
     font-weight: 400;
-    width: 438px;
+ 
     height: 50px;
 }
-.sauces_plus{
+
+.sauces_plus {
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
 }
+
 .sauces {
     border-radius: 13px;
     width: 276px;
@@ -1252,7 +1264,7 @@ label {
 .sauces_right_plus {
     width: 36px;
     height: 36px;
-    margin:-24px -22px 0 17px;
+    margin: -24px -22px 0 17px;
     /* margin: 0 0 50px 75px; */
     background: rgba(255, 255, 255, 1);
     border: #fff;
@@ -1262,29 +1274,47 @@ label {
 
 /* ORDER in restaurant */
 
-.order_restaurant_title{
+.order_restaurant_title {
     display: flex;
     justify-content: space-between;
 }
-.time_number_order{
+
+.time_number_order {
     display: flex;
     gap: 30px;
     align-items: center;
 }
-.time_number_order_h{
+
+.time_number_order_h {
     color: #fff;
     font-size: 40px;
     font-weight: 500;
 }
-.time_number_order_text{
+
+.time_number_order_text {
     font-size: 30px;
     font-weight: 400;
     color: #fff;
     opacity: 30%;
 }
-.order_status_txt{
+
+.order_status_txt {
     color: #fff;
     font-size: 38px;
     font-weight: 400;
     text-transform: uppercase;
+}
+.and_btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.buy_plus_title_btn{
+    background-color: #CB3B48;
+    border-color: #CB3B48;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 250px;
+    height: 50px;
 }
