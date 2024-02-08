@@ -85,7 +85,7 @@ body {
     width: 1600px;
     height: 940px;
     margin: 0 auto;
-    background: url("/Night-Club-ld/img/night_clubbing.png")no-repeat;
+    background: url("/img/night_clubbing.png")no-repeat;
 }
 
 .content_night {
@@ -285,7 +285,7 @@ body {
 }
 
 .news_container {
-    background-image: url("/Night-Club-ld/img/new.png");
+    background-image: url("/img/new.png");
     background-size: cover;
 
     height: 515px;
@@ -508,7 +508,7 @@ body {
 
 .container_footer {
     padding-top: 25px;
-    background-image: url("/Night-Club-ld/img/footerleft.png");
+    background-image: url("/img/footerleft.png");
     background-size: cover;
 
     height: 158px;
@@ -693,7 +693,7 @@ body {
 
 .text_card_menu {
 
-    background-image: url("/Night-Club-ld/img/food_bg.png");
+    background-image: url("/img/food_bg.png");
 }
 
 .text_card_menu_title {
@@ -882,7 +882,7 @@ body {
     gap: 20px;
     background: #161615;
     border-radius: 30px;
-    background-image: url("/Night-Club-ld/vector/order_bg.svg");
+    background-image: url("/vector/order_bg.svg");
 }
 
 .order_select {
@@ -921,7 +921,7 @@ body {
     margin-top: 50px;
     border-radius: 30px;
     background: #161615;
-    background-image: url("/Night-Club-ld/vector/order_bg.svg");
+    background-image: url("/vector/order_bg.svg");
 }
 
 .your_order_title {
@@ -1075,7 +1075,7 @@ body {
     -ms-flex-direction: column;
     flex-direction: column;
     background-color: #222220;
-    background-image: url("/Night-Club-ld/img/footerleft.png") no-repeat;
+    background-image: url("/img/footerleft.png") no-repeat;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .2);
@@ -1124,7 +1124,7 @@ body {
     flex: 1 1 auto;
     padding: 15px;
     overflow: auto;
-    background-image: url("/Night-Club-ld/img/footerleft.png");
+    background-image: url("/img/footerleft.png");
 }
 
 .modal_title {
