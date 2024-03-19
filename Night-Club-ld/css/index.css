@@ -1333,4 +1333,23 @@ label {
     align-items: end;
     gap: 15px;
     margin-bottom: 10px;
+  }                                                                                                 
+  /* signup */
+  .signup_form{
+    margin: 0 auto;
+    text-align: center;
   }
+.signup_form h1 {
+    color: #fff;
+}
+.signup_btn{
+width: 275px;
+height: 50px;
+color: #fff;
+background-color: #CB3B48;
+border-radius:5px ;
+border: #CB3B48;
+}
+.signup_form input{
+    color: #fff;
+}
