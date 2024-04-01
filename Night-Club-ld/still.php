@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <?php include_once('./elements/header.php') ?>
     <main>
         <div class="still">
             <div class="container">
@@ -35,10 +36,29 @@
                         </div>
                     </div>
                 </div>
+                <div class="photo">
+                    <h1>haloween party 2021</h1>
+                    <div class="cont_photo">
+                        <div class="leftimg">
+                            <img class="lef_img" src="./img/still_1.png" alt="">
+                        </div>
+                        <div class="rightimg">
+                            <div class="cont_righ_img">
+                                <img class="right_img" src="./img/still_2.png" alt="">
+                                <img class="right_img" src="./img/still_3.png" alt="">
+                            </div>
+                            <div class="cont_righ_img">
+                                <img class="right_img" src="./img/still_4.png" alt="">
+                                <img class="right_img" src="./img/still_5.png" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </main>
+    <?php include_once('./elements/footer.php') ?>
 </body>
 
 </html>

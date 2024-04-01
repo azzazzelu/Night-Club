@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signin</title>
+    <title>signup</title>
     <link type="image/x-icon" rel="shortcut icon" href="./ico/logo.ico">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/normalize.css">
@@ -12,25 +12,29 @@
 </head>
 
 <body>
+<?php include_once('./elements/header.php') ?>
     <main>
         <div class="signup">
             <div class="container">
-                <form class="signup_form" action="./index.html" method="post">
-                    <h1>Вход</h1>
+                <form class="signup_form" action="./signin.html" method="">
+                    <h1>Регестрация</h1>
+                    <div class="signup_name">
+                        <input type="text" placeholder="Введите имя" name="name" required>
+                    </div>
                     <div class="signup_email">
                         <input type="text" placeholder="Введите почту" name="email" required>
                     </div>
                     <div class="signup_pass">
-                        <input type="password" placeholder="Введите пароль " name="password" required>
+                        <input type="password" placeholder="Введите пароль" name="password" required>
                     </div>
 
-                    <button type="submit" class="signup_btn">Войти</button>
-
+                    <button type="submit" class="signup_btn">Зарегистрироваться</button>
+                    
                 </form>
             </div>
         </div>
     </main>
-
+    <?php include_once('./elements/footer.php') ?>
 </body>
 
 </html>

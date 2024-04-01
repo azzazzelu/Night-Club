@@ -12,30 +12,7 @@
 </head>
 
 <body>
-    <header class="header header_PAGE_MENU">
-        <div class="head_container">
-            <div class="logo">
-                <img src="./vector/logo.svg" alt="">
-            </div>
-            <div class="right_head">
-                <div class="menu">
-                    <nav class="nav">
-                        <a class="nav_a" href="./index.html">Главная</a>
-                        <a class="nav_a" href="./menu.html">Меню</a>
-                        <a class="nav_a" href="">Еще</a>
-                    </nav>
-                </div>
-                <div class="contact">
-                    <a href="./login.html"><img class="svg top_svg" src="./vector/phone.svg" alt=""></a>
-                    <a href=""><img class="top_svg" src="./vector/acc.svg" alt=""></a>
-
-                </div>
-                <div class="booking">
-                    <a href="./basket.html"> <button class="booking_button">Забронировать</button></a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <?php include_once('./elements/header.php') ?>
     <main>
         <div class="night_clubbing">
             <div class="container_logo">
@@ -87,11 +64,9 @@
                             </div>
                             <div class="slider-indicator" id="indicator"></div>
                             <div class="slider_arrow">
-                                <div class="slider-arrow left" onclick="prevSlide()"><img
-                                        src="./vector/arrow_slider_left.svg" alt="">
+                                <div class="slider-arrow left" onclick="prevSlide()"><img src="./vector/arrow_slider_left.svg" alt="">
                                 </div>
-                                <div class="slider-arrow right" onclick="nextSlide()"><img
-                                        src="./vector/arrow_slider_right.svg" alt="">
+                                <div class="slider-arrow right" onclick="nextSlide()"><img src="./vector/arrow_slider_right.svg" alt="">
                                 </div>
                             </div>
 
@@ -168,9 +143,7 @@
                     </div>
                     <hr class="contacts_hr">
                     <div class="contact_content_right">
-                        <iframe
-                            src="https://yandex.ru/map-widget/v1/?um=constructor%3A650aae8e99746c1970b97554d9fda2ae48e4f415c96327e3ef937fcdcd08e284&amp;source=constructor"
-                            width="630" height="390" frameborder="0"></iframe>
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A650aae8e99746c1970b97554d9fda2ae48e4f415c96327e3ef937fcdcd08e284&amp;source=constructor" width="630" height="390" frameborder="0"></iframe>
                         <h1 class="work_time">Режим работы
                             <span class="time">Пт-Сб 21:00-8:00</span>
                         </h1>
@@ -181,47 +154,7 @@
 
     </main>
 
-    <footer class="footer">
-        <div class="container container_footer">
-            <div class="content_footer">
-                <div class="content_footer_left">
-                    <img src="vector/logo.svg" width="320px" height="69px" alt="">
-                    <div class="subtext">
-                        <a href="" class="subtext_text">Политика конфидециальности</a>
-                        <a href="" class="subtext_text">Договор оферты</a>
-                    </div>
-                </div>
-                <div class="contmid_mid">
-                    <div class="content_footer_mid">
-                        <div class="mid_left">
-                            <h1 class="text_footer">Главная</h1>
-                            <h1 class="text_footer">Меню</h1>
-                        </div>
-                        <div class="mid_left">
-                            <h1 class="text_footer">Акции</h1>
-                            <h1 class="text_footer">Интерьер</h1>
-                        </div>
-                        <div class="mid_left">
-                            <h1 class="text_footer">Команда</h1>
-                            <h1 class="text_footer">Контакты</h1>
-                        </div>
-                    </div>
-                    <div class="subtext">
-                        <a href="" class="subtext_text">Информация на сайте не является публичной офертой</a>
-                    </div>
-                </div>
-
-                <div class="content_footer_right">
-                    <h1 class="footer_phone_number">8 (800) 999-99-99</h1>
-                    <a href="" class="subtext_bron">Бронь столов с 09:00 до 19:00</a>
-                    <div class="messange_footer">
-                        <img src="./vector/tg_fot.svg" alt="">
-                        <img src="./vector/wa.svg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include_once('./elements/footer.php') ?>
     <script src="./js/slider_one.js"> </script>
     <script src="./js/slider_news.js"></script>
 </body>
