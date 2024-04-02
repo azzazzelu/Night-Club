@@ -12,12 +12,18 @@
 </head>
 
 <body>
-<?php include_once('./elements/header.php') ?>
+    <?php include_once('./elements/header.php') ?>
     <main>
         <div class="signup">
             <div class="container">
-                <form class="signup_form" action="./index.html" method="post">
+                <form class="signup_form" action="./backend/sign_in.php" method="post">
                     <h1>Вход</h1>
+                    <?php
+                    if ($_SESSION['message']) {
+                        echo   $_SESSION['message'];
+                    }
+                    unset($_SESSION['message']);
+                    ?>
                     <div class="signup_email">
                         <input type="text" placeholder="Введите почту" name="email" required>
                     </div>
@@ -26,7 +32,9 @@
                     </div>
 
                     <button type="submit" class="signup_btn">Войти</button>
-                    <a href="./signup.php"><h1>Регестрация</h1></a>
+                    <a href="./signup.php">
+                        <h1>Регестрация</h1>
+                    </a>
                 </form>
             </div>
         </div>

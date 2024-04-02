@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<?php include_once('./elements/header.php') ?>
+    <?php include_once('./elements/header.php') ?>
 
     <main>
         <div class="news new_menu">
@@ -58,30 +58,43 @@
                 </div>
                 <div class="tab-content" id="content-1">
                     <div class="tab_content_menu">
-                        <div class="card_content_food">
-                            <img src="./img/food_card.png" alt="">
-                            <div class="text_card_menu">
-                                <div class="container_card_menu">
-                                    <h1 class="text_card_menu_title">Салат пармиджано</h1>
-                                    <div class="kk_BGY">
-                                        <p class="kk_BGY_p">Ккал: 245</p>
-                                        <p class="kk_BGY_p">БЖУ: 19,8/12,5/0</p>
-                                    </div>
-                                    <div class="buy_food_menu">
-                                        <div class="price_div">
-                                            <h1 class="price">359₽</h1> <span class="price_span">/100г.</span>
-                                        </div>
-                                        <div class="more_basket">
-                                            <button class="button_more">подробнее</button>
-                                            <button class="button_basket"><img src="./vector/basket.svg"
-                                                    alt=""></button>
-                                        </div>
-                                    </div>
-                                    <hr class="hr_card">
-                                </div>
+                        <?php
+                        require_once './backend/connect.php';
+                        $sql = "SELECT * FROM `menu` ";
+                        $product = mysqli_query($connect, $sql);
+                        if (mysqli_num_rows($product) > 0) {
+                            while ($row = mysqli_fetch_assoc($product)) {
+                                $show_img = base64_encode($row['image']);
+                        ?>
+                                <div class="card_content_food">
+                                    <img src="data:image/jpeg;base64,<?php echo $show_img ?>" alt="">
+                                    <div class="text_card_menu">
+                                        <div class="container_card_menu">
+                                            <h1 class="text_card_menu_title"><?php echo $row['name'] ?></h1>
+                                            <div class="kk_BGY">
+                                                <p class="kk_BGY_p">Ккал: <?php echo $row['calories'] ?></p>
+                                                <p class="kk_BGY_p">БЖУ: <?php echo $row['pfc'] ?></p>
+                                            </div>
+                                            <div class="buy_food_menu">
+                                                <div class="price_div">
+                                                    <h1 class="price"><?php echo $row['price'] ?>₽</h1> <span class="price_span">/100г.</span>
+                                                </div>
+                                                <div class="more_basket">
 
-                            </div>
-                        </div>
+                                                    <a href="./backend/cart.php?id=<?php echo $row['id'] ?>">
+                                                        <button class="button_basket"><img src="./vector/basket.svg" alt=""></button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <hr class="hr_card">
+                                        </div>
+
+                                    </div>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="tab-content" id="content-2">
@@ -92,7 +105,7 @@
                                 <div class="container_card_menu">
                                     <h1 class="text_card_menu_title">Старый немец</h1>
                                     <div class="dring_cat">
-                                       <p class="dring_categry">Olmeca Chocolate, Martini Bitter, Cola, сироп</p>
+                                        <p class="dring_categry">Olmeca Chocolate, Martini Bitter, Cola, сироп</p>
                                     </div>
                                     <div class="buy_food_menu">
                                         <div class="price_div">
@@ -100,7 +113,7 @@
                                         </div>
                                         <div class="more_basket">
                                             <button class="button_dring_more ">подробнее</button>
-                                           
+
                                         </div>
                                     </div>
                                     <hr class="hr_card">

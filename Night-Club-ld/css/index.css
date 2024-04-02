@@ -8,6 +8,13 @@ body {
   font-family: "SuisseIntl";
   font-size: 18px;
 }
+button,
+a,
+.next_btn img,
+.prev_btn img,
+.tab_title {
+  cursor: url("../img/cursor.png"), auto;
+}
 
 .header {
   width: 1600px;
