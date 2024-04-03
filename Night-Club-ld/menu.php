@@ -37,7 +37,7 @@
                 <input checked id="tab-btn-1" class="tab_input" name="tab-btn" type="radio" value="">
                 <label for="tab-btn-1" class="tab_title_1 tab_title">Основное Меню</label>
                 <input id="tab-btn-2" class="tab_input" name="tab-btn" type="radio" value="">
-                <label for="tab-btn-2" class="tab_title_2 tab_title">Барная карта</label>
+                <label for="tab-btn-2" class="tab_title_2 tab_title">Напитки</label>
                 <div class="filter">
                     <div class="filter_top">
                         <p class="filter_text">Холодные закуски</p>
@@ -61,9 +61,10 @@
                         <?php
                         require_once './backend/connect.php';
                         $sql = "SELECT * FROM `menu` ";
+                        $food = mysqli_query($connect, "SELECT * FROM `menu`  WHERE  `category`= 'food'");
                         $product = mysqli_query($connect, $sql);
-                        if (mysqli_num_rows($product) > 0) {
-                            while ($row = mysqli_fetch_assoc($product)) {
+                        if (mysqli_num_rows($food) > 0) {
+                            while ($row = mysqli_fetch_assoc($food)) {
                                 $show_img = base64_encode($row['image']);
                         ?>
                                 <div class="card_content_food">
@@ -99,27 +100,40 @@
                 </div>
                 <div class="tab-content" id="content-2">
                     <div class="tab_content_menu">
-                        <div class="card_content_dring">
-                            <img src="./img/coctel.png" alt="">
-                            <div class="text_card_menu">
-                                <div class="container_card_menu">
-                                    <h1 class="text_card_menu_title">Старый немец</h1>
-                                    <div class="dring_cat">
-                                        <p class="dring_categry">Olmeca Chocolate, Martini Bitter, Cola, сироп</p>
-                                    </div>
-                                    <div class="buy_food_menu">
-                                        <div class="price_div">
-                                            <h1 class="price">329₽</h1> <span class="price_span">/100г.</span>
-                                        </div>
-                                        <div class="more_basket">
-                                            <button class="button_dring_more ">подробнее</button>
+                        <?php
+                        $drink = mysqli_query($connect, "SELECT * FROM `menu`  WHERE  `category`= 'drink'");
+                        $product = mysqli_query($connect, $sql);
+                        if (mysqli_num_rows($drink) > 0) {
+                            while ($row = mysqli_fetch_assoc($drink)) {
+                                $show_img = base64_encode($row['image']);
+                        ?>
+                                <div class="card_content_dring">
+                                    <img src="data:image/jpeg;base64,<?php echo $show_img ?>" alt="">
+                                    <div class="text_card_menu">
+                                        <div class="container_card_menu">
+                                            <h1 class="text_card_menu_title"><?php echo $row['name'] ?></h1>
+                                            <div class="dring_cat">
+                                                <p class="dring_categry"><?php echo $row['description'] ?></p>
+                                            </div>
+                                            <div class="buy_food_menu">
+                                                <div class="price_div">
+                                                    <h1 class="price"><?php echo $row['price'] ?>₽</h1> <span class="price_span">/100г.</span>
+                                                </div>
+                                                <div class="more_basket">
+                                                    <a href="./backend/cart.php?id=<?php echo $row['id'] ?>">
+                                                        <button class="button_basket"><img src="./vector/basket.svg" alt=""></button>
+                                                    </a>
 
+                                                </div>
+                                            </div>
+                                            <hr class="hr_card">
                                         </div>
                                     </div>
-                                    <hr class="hr_card">
                                 </div>
-                            </div>
-                        </div>
+                        <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

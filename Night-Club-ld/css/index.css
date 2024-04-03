@@ -8,12 +8,16 @@ body {
   font-family: "SuisseIntl";
   font-size: 18px;
 }
+
 button,
 a,
 .next_btn img,
 .prev_btn img,
 .tab_title {
-  cursor: url("../img/cursor.png"), auto;
+  cursor: url("../img/cursor.png");
+  cursor: -webkit-image-set(url("../img/cursor.png") .5x, url("../img/cursor.png") 2x) 8 8, default;
+  background-size: 16px 16px;
+  /* Укажите желаемый размер курсора */
 }
 
 .header {
@@ -82,8 +86,7 @@ a,
   flex-shrink: 0;
 }
 
-.night_clubbing {
-}
+.night_clubbing {}
 
 .container {
   width: 1200px;
@@ -437,8 +440,7 @@ a,
   background: #222220;
 }
 
-.contact_content_left {
-}
+.contact_content_left {}
 
 .online_cont {
   width: 353px;
@@ -501,6 +503,7 @@ a,
   font-weight: 400;
   line-height: normal;
 }
+
 body {
   display: flex;
   flex-direction: column;
@@ -519,6 +522,7 @@ footer {
 .footer {
   background: #161615;
 }
+
 footer {
   /* position: fixed; */
   left: 0;
@@ -549,8 +553,7 @@ footer {
   justify-content: space-between;
 }
 
-.content_footer_left {
-}
+.content_footer_left {}
 
 .subtext {
   margin-top: 23px;
@@ -618,7 +621,7 @@ footer {
   padding-top: 50px;
 }
 
-.tab > input[type="radio"] {
+.tab>input[type="radio"] {
   display: none;
 }
 
@@ -626,13 +629,13 @@ footer {
   display: none;
 }
 
-#tab-btn-1:checked ~ #content-1,
-#tab-btn-2:checked ~ #content-2 {
+#tab-btn-1:checked~#content-1,
+#tab-btn-2:checked~#content-2 {
   display: block;
 }
 
-#tab-btn-1:checked ~ .tab_title_1,
-#tab-btn-2:checked ~ .tab_title_2 {
+#tab-btn-1:checked~.tab_title_1,
+#tab-btn-2:checked~.tab_title_2 {
   color: #fff;
   font-family: Gilroy;
   font-size: 30px;
@@ -655,7 +658,7 @@ footer {
   display: none;
 }
 
-.tab > inpuyt[tpe="radio"]:checked + label {
+.tab>inpuyt[tpe="radio"]:checked+label {
   color: #fff;
   font-family: Gilroy;
   font-size: 30px;
@@ -818,13 +821,13 @@ footer {
   margin-top: 100px;
 }
 
-#tab_btn_1:checked ~ #content_1,
-#tab_btn_2:checked ~ #content_2 {
+#tab_btn_1:checked~#content_1,
+#tab_btn_2:checked~#content_2 {
   display: block;
 }
 
-#tab_btn_1:checked ~ .tab_title_1,
-#tab_btn_2:checked ~ .tab_title_2 {
+#tab_btn_1:checked~.tab_title_1,
+#tab_btn_2:checked~.tab_title_2 {
   color: #fff;
   font-family: Gilroy;
   font-size: 30px;
@@ -835,7 +838,7 @@ footer {
   margin-bottom: 25px;
 }
 
-.basket > inpuyt[tpe="radio"]:checked + label {
+.basket>inpuyt[tpe="radio"]:checked+label {
   color: #fff;
   font-family: Gilroy;
   font-size: 30px;
@@ -877,11 +880,11 @@ footer {
   height: 50px;
 }
 
-.btn_about_basket > img {
+.btn_about_basket>img {
   margin-right: 10px;
 }
 
-.about_basket_title > span {
+.about_basket_title>span {
   color: #bd2d43;
 }
 
@@ -1300,11 +1303,13 @@ label {
   font-weight: 400;
   text-transform: uppercase;
 }
+
 .and_btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .buy_plus_title_btn {
   background-color: #cb3b48;
   border-color: #cb3b48;
@@ -1322,20 +1327,24 @@ label {
   margin: 0 auto;
   text-align: center;
 }
+
 .checkbox_on {
   display: flex;
   align-items: end;
   gap: 15px;
   margin-bottom: 10px;
 }
+
 /* signup */
 .signup_form {
   margin: 0 auto;
   text-align: center;
 }
+
 .signup_form h1 {
   color: #fff;
 }
+
 .signup_btn {
   width: 275px;
   height: 50px;
@@ -1344,9 +1353,11 @@ label {
   border-radius: 5px;
   border: #cb3b48;
 }
+
 .signup_form input {
   color: #fff;
 }
+
 .personal_acc {
   margin-top: 50px;
 }
@@ -1363,22 +1374,27 @@ label {
 .still {
   margin-top: 50px;
 }
+
 .lef_img {
   width: 584px;
   height: 481px;
 }
+
 .cont_photo {
   display: flex;
 }
+
 .rightimg {
   display: flex;
 }
-.cont_righ_img {
-}
+
+.cont_righ_img {}
+
 .right_img {
   width: 280px;
   height: 233px;
 }
+
 .photo h1 {
   font-size: 24px;
   text-transform: uppercase;
