@@ -9,17 +9,19 @@
                 <nav class="nav">
                     <a class="nav_a" href="index.php">Главная</a>
                     <a class="nav_a" href="menu.php">Меню</a>
-                     
+                    <?php if ($_SESSION['user']['password'] == "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9" && $_SESSION['user']['email'] == "admin@admin") { ?>
+                        <a href="./order.php" class="nav_a"> заказы</a>
+                    <?php } ?>
                     <?php
                     if (!isset($_SESSION['user'])) { ?>
 
                         <a href="./signin.php"> <button class="booking_button">Войти</button></a>
                         <a href="./signup.php"> <button class="booking_button">Регистрация</button></a>
 
-                        
+
                     <?php  } else { ?>
 
-                            <?php if ($_SESSION['user']['password'] == "admin123" && $_SESSION['user']['email'] == "admin@admin.com") { ?>
+                        <?php if ($_SESSION['user']['password'] == "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9" && $_SESSION['user']['email'] == "admin@admin") { ?>
                             <a href="./admin_panel.php"> <button class="booking_button">Админ панель</button></a>
                         <?php   } else { ?>
                             <a href="./basket.php"> <button class="booking_button">Заказы </button></a>

@@ -24,13 +24,18 @@ require_once './backend/connect.php';
 <body>
     <?php include_once('./elements/header.php') ?>
     <div class="container">
-        <?php if (!$_SESSION['user']['password'] == "1231231" && !$_SESSION['user']['email'] == "test@gmail.com") {
+        <?php if (!$_SESSION['user']['password'] == "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9" && !$_SESSION['user']['email'] == "admin@admin") {
             echo "Вы попали сюда случайно";
         } else { ?>
-
+            <nav>
+                <ul>
+                    <li><a href="#food">Добавить блюда</a></li>
+                    <li><a href="#stock">Добавить Акцию</a></li>
+                </ul>
+            </nav>
             <h2>Добро пожаловать</h2>
             <div class="container_one">
-                <form action="admin_panel.php" method="post" enctype="multipart/form-data" class="form">
+                <form id="food" action="admin_panel.php" method="post" enctype="multipart/form-data" class="form">
                     <label>Добавить блюдо или напиток</label>
                     <div class="block">
                         <h1>Выберите изоброжение</h1>
@@ -145,12 +150,12 @@ require_once './backend/connect.php';
             }
             ?>
         <?php
-        if (!$_SESSION['user']['password'] == " " && !$_SESSION['user']['email'] == "admin@admin") {
+        if (!$_SESSION['user']['password'] == "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9" && !$_SESSION['user']['email'] == "admin@admin") {
         } else {
 
         ?>
             <div class="container_one">
-                <form action="" method="post" class="form" enctype="multipart/form-data">
+                <form action="admin_panel.php" method="post" class="form" enctype="multipart/form-data">
                     <label>Редактирование</label>
                     <table>
                         <tr>
@@ -164,20 +169,20 @@ require_once './backend/connect.php';
                             <div class="block">
                                 <h1>Название блюда или напитка</h1>
                                 <input class="input" type="text" name="nameEdit" value="<?= isset($_GET['red_id']) ? $product['name'] : ''; ?>">
-                               
+
                             </div>
                         </tr>
                         <tr>
                             <div class="block">
                                 <h1>Калории </h1>
                                 <input class="input" type="text" name="caloriesEdit" value="<?= isset($_GET['red_id']) ? $product['calories'] : ''; ?>">
-                             </div>
+                            </div>
                         </tr>
                         <tr>
                             <div class="block">
                                 <h1>Из чего состоит (для напитков) </h1>
                                 <input class="input" type="text" name="consistEdit" value="<?= isset($_GET['red_id']) ? $product['consist'] : ''; ?>">
-                             </div>
+                            </div>
                         </tr>
                         <tr>
                             <div class="block">
@@ -193,9 +198,9 @@ require_once './backend/connect.php';
                         </tr>
                         <tr>
                             <div class="block">
-                                <h1>Категория одежды:</h1>
+                                <h1>Выбирите блюдо или напиток:</h1>
                                 <p style="color:red;">ОБЯЗАТЕЛЬНОЕ ПОЛЕ</p>
-                                <select name="category" id="">
+                                <select name="category">
                                     <option value="">Выбрать</option>
 
                                     <option value="<?= isset($_GET['red_id']) ? $product['category'] = 'food' : ''; ?>">food</option>
@@ -253,9 +258,141 @@ require_once './backend/connect.php';
                     <tr>
                 </table>
             </div>
-            <div class="exit">
-                <a href="logout.php">Выход</a>
+            <!-- АКЦИИ -->
+            <?php
+            // добавление
+            if (isset($_POST['stock'])) {
+                if (!empty($_FILES['file']['tmp_name'])) $img = addslashes(file_get_contents($_FILES['file']['tmp_name']));
+                $name = $_POST['nameStock'];
+
+
+                $add_product = mysqli_query($connect, "INSERT INTO `stock`(`image`,`name`)VALUES('$img','$name')");
+                if (!$add_product) {
+                    echo '<h3>Данные введены не корректно</h3>';
+                } else {
+                    echo '<h3>Товар успешно добавлен</h3>';
+                }
+            }
+            ?>
+            <?php
+            // редактирование
+            if (isset($_POST['stockEdit'])) {
+
+
+                $image = $_FILES['image']['tmp_name'];
+                $imagType = $_FILES['image']['type'];
+                $imgData = file_get_contents($image);
+                $imgData = mysqli_real_escape_string($connect, $imgData);
+
+
+                //Если это запрос на обновление, то обновляем
+                if (isset($_GET['red_id'])) {
+                    if (!empty($imgData)) {
+                        $sql = mysqli_query($connect, "UPDATE stock SET  image='$imgData', `name` = '{$_POST['nameEdit']}'  WHERE id={$_GET['red_id']}");
+                    } else {
+                        $sql = mysqli_query($connect, "UPDATE stock SET  `name` = '{$_POST['nameEdit']}'  WHERE id={$_GET['red_id']}");
+                    }
+                } else {
+                    //Иначе вставляем данные, подставляя их в запрос
+                    $sql = mysqli_query($connect, "INSERT INTO stock (image ,name ) VALUES ('$imgData','{$_POST['nameEdit']}')");
+                }
+
+                //Если вставка прошла успешно
+                if ($sql) {
+                    echo '<h3>Успешно изменено !</h3>';
+                } else {
+                    echo '<h3>Произошла ошибка: ' . mysqli_error($connect) . '</h3>';
+                }
+            }
+
+            if (isset($_GET['del_id'])) { //проверяем, есть ли переменная
+                //удаляем строку из таблицы
+                $sql = mysqli_query($connect, "DELETE FROM `stock` WHERE `id` = {$_GET['del_id']}");
+                if ($sql) {
+                    echo "<h3>Товар удален</h3>";
+                } else {
+                    echo '<h3>Произошла ошибка: ' . mysqli_error($connect) . '</h3>';
+                }
+            }
+            if (isset($_GET['red_id'])) {
+                $sql = mysqli_query($connect, "SELECT `id`, `image`,`name` FROM `stock` WHERE `id`={$_GET['red_id']}");
+                $product = mysqli_fetch_array($sql);
+                $show_img = base64_encode($product['image']);
+            }
+            ?>
+
+            <div class="container_one">
+                <div style="display:flex">
+                    <form id="stock" action="admin_panel.php" method="post" enctype="multipart/form-data" class="form">
+                        <label>Добавить акцию</label>
+                        <div class="block">
+                            <h1>Выберите изоброжение</h1>
+                            <input name="file" type="file">
+                        </div>
+                        <div class="block">
+                            <h1>Название акции</h1>
+                            <input class="input" autocomplete="off" name="nameStock" type="text">
+                        </div>
+                        <button class="button" name="stock" type="submit">Добавить</button>
+                    </form>
+                    <form action="admin_panel.php" method="post" class="form" enctype="multipart/form-data">
+                        <label>Редактирование</label>
+                        <table>
+                            <tr>
+                                <div class="block">
+                                    <h1>Изоброжение:</h1>
+                                    <input name="image" type="file" value="">
+
+                                </div>
+                            </tr>
+                            <tr>
+                                <div class="block">
+                                    <h1>Название акции</h1>
+                                    <input class="input" type="text" name="nameEdit" value="<?= isset($_GET['red_id']) ? $product['name'] : ''; ?>">
+
+                                </div>
+                            </tr>
+
+
+                            <tr>
+                                <input type="submit" name="stockEdit" value="Подтвердить" class="button">
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+
             </div>
+            <div class="container_one">
+                <table>
+                    <tr class="">
+                        <td>Изоброжение</td>
+                        <td>Название</td>
+                        <td>Редактирование</td>
+                        <td>Удаление</td>
+
+                    </tr>
+
+                    <?php
+
+                    $sql = mysqli_query($connect, 'SELECT `id`,`image`,`name`  FROM `stock`');
+                    while ($result = mysqli_fetch_array($sql)) {
+                        $show_img = base64_encode($result['image']); ?>
+
+                        <tr>
+                            <td><img width="200px" height="300px" src="data:image/jpeg;base64,<?php echo $show_img; ?>"></td>
+                            <td><?php echo $result['name']; ?></td>
+                            <td><a class="button_min" href='?red_id=<?php echo $result['id']; ?>'>Изменить</a></td>
+                            <td><a class="button_min" href='?del_id=<?php echo $result['id']; ?>'>Удалить</a>
+                            </td>
+
+                        </tr>
+                    <?php
+                    } ?>
+
+                    <tr>
+                </table>
+            </div>
+
     </div>
 <?php }
         include_once('./elements/footer.php')

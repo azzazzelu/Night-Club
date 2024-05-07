@@ -24,37 +24,17 @@
                 <hr class="about_hr">
                 <h1 class="buy_plus_title">Заказать</h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <?php
-                $count = 0;
-                foreach ($_SESSION['cart'] as $item) {
-                    $count++;
-                    // Другие операции с корзиной
+                if (!$_SESSION['cart']) {
+                    $basket = "Корзина пуста";
+                } else {
+                    $count = 0;
+                    foreach ($_SESSION['cart'] as $item) {
+                        $count++;
+                        // Другие операции с корзиной
+                    }
                 }
+
                 ?>
 
 
@@ -65,7 +45,7 @@
 
                         <span><?php echo $count ?></span>
 
-                        
+
                     </h1>
 
                     <button onclick="window.location.href='./backend/del_item_all.php'" class="btn_about_basket">
@@ -78,6 +58,11 @@
 
                 <div class="about_basket_content">
                     <div class="about_basket_content_left">
+                        <?php
+                        if (!$_SESSION['cart']) { ?>
+                            <h1 class="buy_plus_title">Корзина пуста</h1>
+                        <?php }
+                        ?>
                         <div class="order_select">
                             <?php
                             require_once './backend/connect.php';
@@ -91,10 +76,8 @@
                                     while ($row = mysqli_fetch_assoc($product)) {
                                         $show_img = base64_encode($row['image']);
                                         $Price += $row['price'];
-                                    
+
                             ?>
-
-
                                         <div class="order_card">
                                             <div class="left_order_card">
                                                 <img src="data:image/jpeg;base64,<?php echo $show_img ?>" alt="">
@@ -129,8 +112,6 @@
                                                         <span class="price_span">/100г.</span>
                                                     </div>
 
-                                                    <!-- Сделать счетчик количества товара -->
-                                                    <div class="coutn_food"></div>
                                                 </div>
                                             </div>
 
@@ -188,7 +169,67 @@
                                 }
                                 ?>
                             </div>
+                            <div id="openModal" class="modal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <a href="#close" title="Close" class="close">
+                                                <img src="./vector/close_buy.svg" alt="">
+                                            </a>
 
+                                            <div class="modal_title">Заполните данные для доставки</div>
+
+                                            <form class="modal_form" action="" method="post">
+                                                <input type="text" id="name" name="name" placeholder="Ваше Имя" required="required"></input>
+
+                                                <input type="text" id="number_phone" name="number_phone" placeholder="+7 (999) 999-99-99" required="required"></input>
+
+                                                <input type="text" id="address" name="address" placeholder="Адрес доставки" required="required"></input>
+
+                                                <input type="text" id="comment" name="comment" placeholder="Комментарий к заказу" required="required"></input>
+
+                                                <div class="buy_modal">
+                                                    <div class="payment">Оплата</div>
+
+                                                    <div class="cask_or_Onlinebank">
+                                                        <input type="radio" name="buy" id="cask_or_Onlinebank" required="required"></input>
+
+                                                        <label for="male">
+                                                            Оплата наличными или банковской картой при
+                                                            получении
+                                                            заказа
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="buy_on_site">
+                                                        <input type="radio" name="buy" id="buy_on_site"></input>
+
+                                                        <label for="male">
+                                                            Оплата банковской картой на сайте
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="yandex">
+                                                        <input type="radio" name="buy" id="yandex"></input>
+
+                                                        <label for="male">
+                                                            Яндекс.Касса (Apple pay, Google pay, Альфа Банк,
+                                                            Тинькофф, QIWI, WebMoney, Яндекс Деньги)
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <input type="submit" value="Оформить заказ"></input>
+
+                                                <p class="form_p">
+                                                    Нажимая на кнопку "Оставить заявку", вы даете согласие на
+                                                    обработку персональных данных
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="delivery_order">
                                 <h1 class="delivery_order_text">Доставка</h1>
 
@@ -199,7 +240,7 @@
                                 <div class="result_order">
                                     <h1 class="result_order_text">Итог:</h1>
 
-                                    <h1 class="result_order_price"><?php echo $Price+1000 ?>₽</h1>
+                                    <h1 class="result_order_price"><?php echo $Price + 1000 ?>₽</h1>
                                 </div>
 
                                 <a href="#openModal">

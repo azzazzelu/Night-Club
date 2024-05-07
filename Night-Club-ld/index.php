@@ -21,8 +21,8 @@
                         <img src="./vector/title_night.svg" alt="">
                     </div>
                     <div class="button_mid">
-                        <button class="button_left_booking right">Заказать</button>
-                        <button class="button_menu">посмотреть меню</button>
+                        <button onclick="window.location.href='basket.php'" class="button_left_booking right">Заказать</button>
+                        <button onclick="window.location.href='menu.php'" class="button_menu">посмотреть меню</button>
                     </div>
                 </div>
             </div>
@@ -81,11 +81,19 @@
                 <div class="news_content">
                     <h1 class="title_news">Новости и акции</h1>
                     <div class="slider_news">
-                        <div class="card_news"><img src="./img/card_news_2.png" alt=""></div>
-                        <div class="card_news"><img src="./img/card_news_1.png" alt=""></div>
-                        <div class="card_news"><img src="./img/card_news_3.png" alt=""></div>
-                        <div class="card_news"><img src="./img/card_news_1.png" alt=""></div>
-                        <div class="card_news"><img src="./img/card_news_2.png" alt=""></div>
+                    <?php
+                        require_once './backend/connect.php';
+                        $sql = "SELECT * FROM stock ";
+                        $product = mysqli_query($connect, $sql);
+                        if (mysqli_num_rows($product) > 0) {
+                            while ($row = mysqli_fetch_assoc($product)) {
+                                $show_img_stock = base64_encode($row['image']);
+                        ?>
+                                <div class="card_news"><img src="data:image/jpeg;base64,<?php echo $show_img_stock; ?>" alt=""></div>
+                        <?php
+                            }
+                        }
+                        ?>
                         <div class="prev_btn"><img src="./img/Slider_news.png" alt=""></div>
                         <div class="next_btn"><img src="./img/slider_news_right.png" alt=""></div>
                     </div>

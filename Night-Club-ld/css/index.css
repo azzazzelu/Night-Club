@@ -13,7 +13,9 @@ a,
 .next_btn img,
 .prev_btn img,
 .tab_title {
-  cursor: url("../img/cursor.png").5 .5, pointer;
+  cursor: url("../img/cursor.png");
+  cursor: -webkit-image-set(url("../img/cursor.png") .5x, url("../img/cursor.png") 2x) 8 8, default;
+  background-size: 16px 16px;
   
 }
 

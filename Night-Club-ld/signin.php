@@ -32,9 +32,7 @@
                     </div>
 
                     <button type="submit" class="signup_btn">Войти</button>
-                    <a href="./signup.php">
-                        <h1>Регистрация</h1>
-                    </a>
+                   
                 </form>
             </div>
         </div>

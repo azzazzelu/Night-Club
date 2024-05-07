@@ -14,16 +14,30 @@
     <?php include_once('./elements/header.php') ?>
 
     <main>
+
+
+
+
+
+
         <div class="news new_menu">
             <div class="container news_container">
                 <div class="news_content">
                     <h1 class="title_news">Новости и акции</h1>
                     <div class="slider_news">
-                        <div class="card_news"><img src="./img/card_news_2.png" alt=""></div>
-                        <div class="card_news"><img src="./img/card_news_1.png" alt=""></div>
-                        <div class="card_news"><img src="./img/card_news_3.png" alt=""></div>
-                        <div class="card_news"><img src="./img/card_news_1.png" alt=""></div>
-                        <div class="card_news"><img src="./img/card_news_2.png" alt=""></div>
+                        <?php
+                        require_once './backend/connect.php';
+                        $sql = "SELECT * FROM stock ";
+                        $product = mysqli_query($connect, $sql);
+                        if (mysqli_num_rows($product) > 0) {
+                            while ($row = mysqli_fetch_assoc($product)) {
+                                $show_img_stock = base64_encode($row['image']);
+                        ?>
+                                <div class="card_news"><img src="data:image/jpeg;base64,<?php echo $show_img_stock; ?>" alt=""></div>
+                        <?php
+                            }
+                        }
+                        ?>
                         <div class="prev_btn"><img src="./img/Slider_news.png" alt=""></div>
                         <div class="next_btn"><img src="./img/slider_news_right.png" alt=""></div>
                     </div>
@@ -38,7 +52,7 @@
                 <label for="tab-btn-1" class="tab_title_1 tab_title">Основное Меню</label>
                 <input id="tab-btn-2" class="tab_input" name="tab-btn" type="radio" value="">
                 <label for="tab-btn-2" class="tab_title_2 tab_title">Барная карта</label>
-                
+
                 <div class="tab-content" id="content-1">
                     <div class="tab_content_menu">
                         <?php
@@ -100,7 +114,7 @@
                                             </div>
                                             <div class="buy_food_menu">
                                                 <div class="price_div">
-                                                <h1 class="price"><?php echo $row['price'] ?>₽</h1> <span class="price_span">/100г.</span>
+                                                    <h1 class="price"><?php echo $row['price'] ?>₽</h1> <span class="price_span">/100г.</span>
                                                 </div>
                                                 <div class="more_basket">
                                                     <a href="./backend/cart.php?id=<?php echo $row['id'] ?>">
